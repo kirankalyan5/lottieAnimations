@@ -1,2 +1,3 @@
 # lottieAnimations
-Project to demonstrates sample Lottie Animations
+React Native Project to demonstrates sample Lottie Animations
+
