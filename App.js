@@ -1,23 +1,72 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, ScrollView,Text, View } from 'react-native';
+import LottieView from 'lottie-react-native';
+
+import waiting from './src/lottie/dog.json'
+import cycling from './src/lottie/cycle_animation.json'
+import favourite from './src/lottie/favourite.json'
+import heart from './src/lottie/heart.json'
+import like from './src/lottie/like.json'
+
+
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <ScrollView contentContainerStyle={styles.container}>
+          <Text>Lottie example</Text>
+          <View style={styles.lottieWrapper}>
+          <LottieView
+              source={waiting}
+              autoPlay
+              loop
+            />
+          </View>
+          <View style={styles.row}>
+            <View style={styles.lottie}>
+              <LottieView
+                source={favourite}
+                autoPlay
+                loop
+              />
+            </View>
+            <View style={styles.lottie}>
+              <LottieView
+                source={heart}
+                autoPlay
+                loop
+              />
+            </View>
+            <View style={styles.lottie}>
+              <LottieView
+                source={like}
+                autoPlay
+                loop
+              />
+            </View>
+          </View>
+          <View style={styles.lottieWrapper}>
+            <LottieView
+              source={cycling}
+              autoPlay
+              loop
+            />
+          </View>
+        </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    marginTop: 36,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center', alignItems: 'center'
   },
+  lottieWrapper: {height: 300, width: 300},
+  lottie: {height: 120, width: 120},
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  }
 });
